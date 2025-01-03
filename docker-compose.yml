@@ -1,0 +1,44 @@
+version: '3'
+services:
+  peer1:
+    build:
+      context: .
+      dockerfile: src/ds/assign/tom/peer/Dockerfile      # Path to the Peer Dockerfile
+    command: ["172.18.0.3","172.18.0.4","172.18.0.5","172.18.0.6","172.18.0.7"] # Arguments for peer1
+    #         |peer2        |peer3       |peer4       |peer5       |peer6
+
+  peer2:
+    build:
+      context: .
+      dockerfile: src/ds/assign/tom/peer/Dockerfile      # Path to the Peer Dockerfile
+    command: ["172.18.0.2", "172.18.0.4","172.18.0.5","172.18.0.6","172.18.0.7"]  # Arguments for peer2
+    #         |peer1        |peer3       |peer4       |peer5       |peer6
+
+  peer3:
+    build:
+      context: .
+      dockerfile: src/ds/assign/tom/peer/Dockerfile      # Path to the Peer Dockerfile
+    command: ["172.18.0.2","172.18.0.3","172.18.0.5","172.18.0.6","172.18.0.7"] # Arguments for peer3
+    #         |peer1        |peer2       |peer4       |peer5       |peer6
+
+  peer4:
+    build:
+      context: .
+      dockerfile: src/ds/assign/tom/peer/Dockerfile       # Path to the Peer Dockerfile
+    command: ["172.18.0.2","172.18.0.3","172.18.0.4","172.18.0.6","172.18.0.7"] # Arguments for peer4
+    #         |peer1        |peer2       |peer3       |peer5       |peer6
+
+  peer5:
+    build:
+      context: .
+      dockerfile: src/ds/assign/tom/peer/Dockerfile       # Path to the Peer Dockerfile
+    command: ["172.18.0.2","172.18.0.3","172.18.0.4","172.18.0.5","172.18.0.7"] # Arguments for peer5
+    #         |peer1        |peer2       |peer3       |peer4       |peer6
+
+  peer6:
+    build:
+      context: .
+      dockerfile: src/ds/assign/tom/peer/Dockerfile        # Path to the Peer Dockerfile
+    command: ["172.18.0.2","172.18.0.3","172.18.0.4","172.18.0.5","172.18.0.6"] # Arguments for peer6
+    #         |peer1        |peer2       |peer3       |peer4       |peer5
+
