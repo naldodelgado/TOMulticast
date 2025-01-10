@@ -31,7 +31,7 @@ public class MessageProcessor implements InPipe.MessageListener {
 
     private void processMessages(){
         try{
-            Thread.sleep(2000); // a cold start so that OutPipe and InPipe can start generating words and queue them on the priority list
+            //Thread.sleep(2000); // a cold start so that OutPipe and InPipe can start generating words and queue them on the priority list
             while(true){
                 synchronized (lamportClock){
                     if(!messageQueue.isEmpty() && messageQueue.peek().getClock() <= lamportClock.get()){
