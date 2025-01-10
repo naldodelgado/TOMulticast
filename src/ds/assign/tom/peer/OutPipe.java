@@ -23,7 +23,7 @@ public class OutPipe implements Runnable {
         this.peers = peers;
         this.lamportClock = lamportClock;
         this.messageQueue = messageQueue;
-        this.words = Files.readAllLines(Paths.get("out/production/TOMulticast/ds.assign.tom.peer/resources/words.txt"));
+        this.words = Files.readAllLines(Paths.get("out/production/TOMulticast/ds/assign/tom/peer/resources/words.txt"));
     }
 
     public void setListener(InPipe.MessageListener listener) {
